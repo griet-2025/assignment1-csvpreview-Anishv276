@@ -5,7 +5,7 @@ import java.io.IOException;
 public class CSVReaderPreview {
     public static void main(String[] args) { 
         String filePath = "dataset/dataset.csv";
-        String line = "";
+        String l = "";
         String delimiter = ",";
         try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
             String headerLine = br.readLine();
@@ -22,8 +22,8 @@ public class CSVReaderPreview {
             System.out.println("\nTotal columns: " + columns.length);
             System.out.println("\nFirst 5 Records:\n");
             int count = 0;
-            while ((line = br.readLine()) != null) {
-                String[] data = line.split(delimiter);
+            while ((l = br.readLine()) != null) {
+                String[] data = l.split(delimiter);
                 System.out.println(String.join(" ", data));
                 count++;
                 if (count == 5) break;
